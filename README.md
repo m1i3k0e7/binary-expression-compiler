@@ -1,5 +1,5 @@
 # Binary Expression Compiler
-Intro to Programming (II) mini project, implemented codegen function
+Intro to Programming (II) mini project ([Reference](https://github.com/lightbulb12294/CSI2P-II-Mini/tree/master)), implemented codegen function
 
 # Example
 input
@@ -21,7 +21,6 @@ add r0 r0 r1
 store [8] r0
 ```
 
-[Reference](https://github.com/lightbulb12294/CSI2P-II-Mini/tree/master)
 ## Input
 
 The input will contain several binary expressions consisting of integers, operators, parentheses, and three variables `x`, `y`, and `z`.
