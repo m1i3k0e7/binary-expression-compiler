@@ -1,5 +1,5 @@
 # Binary Expression Compiler
-Intro to Programming (II) mini project ([Reference](https://github.com/lightbulb12294/CSI2P-II-Mini/tree/master)), implemented codegen function
+Intro to Programming (II) mini project ([Reference](https://github.com/lightbulb12294/CSI2P-II-Mini/tree/master)), implemented semantic_check and codegen function
 
 # Example
 input
