@@ -309,30 +309,25 @@ int condRPAR(Kind kind) {
 	return kind == RPAR;
 }
 
-void semantic_check(AST *now)
-{
+void semantic_check(AST *now) {
 	if (now == NULL) return;
 	// Left operand of '=' must be an identifier or identifier with one or more parentheses.
-	if (now->kind == ASSIGN)
-    {
+	if (now->kind == ASSIGN) {
 		AST *tmp = now->lhs;
 		while (tmp->kind == LPAR) tmp = tmp->mid;
 		if (tmp->kind != IDENTIFIER)
 			err("Lvalue is required as left operand of assignment.");
 	}
-	else if(now->kind == PREDEC || now->kind == PREINC || now->kind == POSTDEC ||now->kind == POSTINC)
-    {
-        AST *tmp = now->mid;
-        while (tmp->kind == LPAR) tmp = tmp->mid;
-        if(tmp->kind != IDENTIFIER)
-        {
-           //printf("**%d**\n",tmp->kind);
-            err("????");
-        }
-    }
-    semantic_check(now->lhs);
-    semantic_check(now->mid);
-    semantic_check(now->rhs);
+	else if(now->kind == PREDEC || now->kind == PREINC || now->kind == POSTDEC ||now->kind == POSTINC) {
+		AST *tmp = now->mid;
+		while (tmp->kind == LPAR) tmp = tmp->mid;
+		if(tmp->kind != IDENTIFIER) {
+		    err("????");
+		}
+	}
+	semantic_check(now->lhs);
+	semantic_check(now->mid);
+	semantic_check(now->rhs);
 	// Operand of INC/DEC must be an identifier or identifier with one or more parentheses.
 	// TODO: Implement the remaining semantic_check code.
 	// hint: Follow the instruction above and ASSIGN-part code to implement.
